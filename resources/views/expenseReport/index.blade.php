@@ -18,14 +18,14 @@
         <table class='table'>
                 <tr>
                     <td>Title</td>
-                    <td>Column</td>
-                    <td>Column</td>
-                    <td>Column</td>
-                    <td>Column</td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 @foreach ($expenseReports as $expenseReport)
                 <tr>
                     <td>{{ $expenseReport->title }}</td>
+                    <td><a class="btn btn-secondary" href="/expense_report/{{ $expenseReport->id }}/edit">Edit</a></td>
+                    <td><a class="btn btn-secondary" href="/expense_report/{{ $expenseReport->id }}/confirmDelete">Delete</a></td>
                 </tr>
                 @endforeach
         </table>

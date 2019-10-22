@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::resource('/expense_report', 'ExpenseReportController');
+
+Route::get('/expense_report/{id}/confirmDelete', 'ExpenseReportController@confirmDelete');
