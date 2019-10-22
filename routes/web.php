@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', 'DashboardController@index');
-
 Route::resource('/expense_report', 'ExpenseReportController');
