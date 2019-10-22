@@ -81,21 +81,42 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Proyecto Laravel
+                    Expense Report
                 </div>
+                
+                <table class='table'>
+                    <div class="row">
+                        <tr>
+                            <td>T&iacute;tulo</td>
+                            <td>Columna</td>
+                            <td>Columna</td>
+                            <td>Columna</td>
+                            <td>Columna</td>
+                        </tr>
+                        @foreach ($expenseReports as $expenseReport)
+                        <tr>
+                            <td>{{ $expenseReport->title }}</td>
+                        </tr>
+                        @endforeach
+                    </div>
+                </table>
 
-                <div class="links">
-                    <a href="/expense_report">Expense Reports</a>
-                    <!-- <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> -->
-                </div>
+                <br/>
+                <b>
+                    <a href="/" style="text-decoration:none;">Volver</a>
+                </b>
             </div>
         </div>
     </body>
 </html>
+
+<style>
+
+table tr:first-child td
+{
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 6px 5px -7px black;
+}
+
+</style>
