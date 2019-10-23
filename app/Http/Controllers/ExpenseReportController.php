@@ -15,7 +15,7 @@ class ExpenseReportController extends Controller
     public function index()
     {
         return view('expenseReport.index', [
-            'expenseReports' => ExpenseReport::all()
+            'expenseReports' => ExpenseReport::orderBy('updated_at', 'desc')->get()
         ]);
     }
 
@@ -54,9 +54,13 @@ class ExpenseReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+     // MODEL BINDING (Se instancia el modelo automáticamente según el id de la ruta)
+    public function show(ExpenseReport $expenseReport)
     {
-        //
+        return view('expenseReport.show', [
+            'report' => $expenseReport
+        ]);
     }
 
     /**
@@ -83,7 +87,7 @@ class ExpenseReportController extends Controller
     public function update(Request $request, $id)
     {
         $valData = $request->validate([
-            'title' => 'required|max:3'
+            'title' => 'required|min:3'
         ]);
 
         $report = ExpenseReport::findOrFail($id);

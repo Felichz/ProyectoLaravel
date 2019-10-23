@@ -23,7 +23,7 @@
                 </tr>
                 @foreach ($expenseReports as $expenseReport)
                 <tr>
-                    <td>{{ $expenseReport->title }}</td>
+                    <td><a href="/expense_report/{{ $expenseReport->id }}">{{ $expenseReport->title }}</a></td>
                     <td><a class="btn btn-secondary" href="/expense_report/{{ $expenseReport->id }}/edit">Edit</a></td>
                     <td><a class="btn btn-secondary" href="/expense_report/{{ $expenseReport->id }}/confirmDelete">Delete</a></td>
                 </tr>
