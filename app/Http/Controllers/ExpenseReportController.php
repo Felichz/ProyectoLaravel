@@ -37,8 +37,12 @@ class ExpenseReportController extends Controller
      */
     public function store(Request $request)
     {
+        $valData = $request->validate([
+            'title' => 'required|min:3'
+        ]);
+
         $reports = new ExpenseReport;
-        $reports->title = $request->get('title');
+        $reports->title = $valData['title'];
         $reports->save();
 
         return redirect('/expense_report');
@@ -78,8 +82,12 @@ class ExpenseReportController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $valData = $request->validate([
+            'title' => 'required|max:3'
+        ]);
+
         $report = ExpenseReport::findOrFail($id);
-        $report->title = $request->get('title');
+        $report->title = $valData['title'];
         $report->save();
 
         return redirect('/expense_report');

@@ -17,7 +17,7 @@
     <div class="col">
         <table class='table'>
                 <tr>
-                    <td>Title</td>
+                    <td><h5>Title</h5></td>
                     <td></td>
                     <td></td>
                 </tr>
