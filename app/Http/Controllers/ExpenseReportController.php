@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Expense;
 use App\ExpenseReport;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class ExpenseReportController extends Controller
     public function index()
     {
         return view('expenseReport.index', [
-            'expenseReports' => ExpenseReport::orderBy('updated_at', 'desc')->get()
+            'reports' => ExpenseReport::orderBy('updated_at', 'desc')->get()
         ]);
     }
 
@@ -114,6 +115,9 @@ class ExpenseReportController extends Controller
     {
         $report = ExpenseReport::findOrFail($id);
         $report->delete();
+
+        $expenses = new Expense();
+        $expenses->where('expense_report_id', $id)->delete();
 
         return redirect('/expense_report');
     }

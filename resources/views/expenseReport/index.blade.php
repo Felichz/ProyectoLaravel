@@ -18,14 +18,16 @@
         <table class='table'>
                 <tr>
                     <td><h5>Title</h5></td>
+                    <td><h5>Total Amount</h5></td>
                     <td></td>
                     <td></td>
                 </tr>
-                @foreach ($expenseReports as $expenseReport)
+                @foreach ($reports as $report)
                 <tr>
-                    <td><a href="/expense_report/{{ $expenseReport->id }}">{{ $expenseReport->title }}</a></td>
-                    <td><a class="btn btn-secondary" href="/expense_report/{{ $expenseReport->id }}/edit">Edit</a></td>
-                    <td><a class="btn btn-secondary" href="/expense_report/{{ $expenseReport->id }}/confirmDelete">Delete</a></td>
+                    <td><a href="/expense_report/{{ $report->id }}">{{ $report->title }}</a></td>
+                    <td>{{ $report->expenses->sum('amount') }}</td>
+                    <td><a class="btn btn-secondary" href="/expense_report/{{ $report->id }}/edit">Edit</a></td>
+                    <td><a class="btn btn-secondary" href="/expense_report/{{ $report->id }}/confirmDelete">Delete</a></td>
                 </tr>
                 @endforeach
         </table>

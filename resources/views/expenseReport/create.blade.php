@@ -9,12 +9,6 @@
 </div>
 <div class="row">
     <div class="col">
-        <a class='btn btn-secondary' href="/expense_report">Back</a>
-    </div>
-</div>
-<br>
-<div class="row">
-    <div class="col">
         @if ($errors->any())
         <div class="alert alert-danger">
             <ul style="margin: 0;">
@@ -31,6 +25,7 @@
             <input type="text" class="form-control" name="title" id="title" placeholder="Type a title" value='{{ old('title') }}'>
             </div>
             <button class="btn btn-primary" type="submit">Submit</button>
+            <a class='btn btn-secondary' href="/expense_report">Back</a>
         </form>
     </div>
 </div>

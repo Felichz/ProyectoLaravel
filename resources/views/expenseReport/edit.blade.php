@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <a class='btn btn-secondary' href="/expense_report">Back</a>
+        <h4><i>"{{ $report->title }}"</i></h4>
     </div>
 </div>
 <br>
@@ -29,9 +29,10 @@
             @method('put')
             <div class="form-group">
                 <label for="title"><h5>Title:</h5></label>
-                <input type="text" class="form-control" name="title" id="title" placeholder="{{ $report->title }}" value="{{ old('title') }}">
+                <input type="text" class="form-control" name="title" id="title" placeholder='Type any title' value="{{ old('title') }}">
             </div>
             <button class="btn btn-primary" type="submit">Submit</button>
+            <a class='btn btn-secondary' href="/expense_report">Back</a>
         </form>
     </div>
 </div>

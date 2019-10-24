@@ -18,3 +18,12 @@ Route::get('/', function () {
 Route::resource('/expense_report', 'ExpenseReportController');
 
 Route::get('/expense_report/{id}/confirmDelete', 'ExpenseReportController@confirmDelete');
+
+Route::resource('/expense_report/{expense_report}/expense', 'ExpenseController', [
+    'except' => [
+        'index',
+        'show'
+    ]
+]);
+
+Route::get('/expense_report/{expense_report}/expense/{expense}/confirmDelete', 'ExpenseController@confirmDelete');
