@@ -4,7 +4,9 @@ Este es un sistema para generar reportes de gastos para empresas, por ejemplo pa
 El objetivo es aprender a manejar Laravel, hecho cursando en Plazi.
 [(Enlace al curso)](https://platzi.com/cursos/curso-php-laravel/ "Link al curso")
 
-Temas dados:
+### Temas dados:
+</br>
+
 ![temas](https://i.imgur.com/WM26eoN.png "temas")
 - Middlewares
 - Inyección de dependencias
