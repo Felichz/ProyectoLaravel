@@ -15,15 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ExpenseReport
 Route::resource('/expense_report', 'ExpenseReportController');
+Route::get('/expense_report/{expense_report}/confirmDelete', 'ExpenseReportController@confirmDelete');
+Route::get('/expense_report/{expense_report}/sendEmail', 'ExpenseReportController@formSendEmail');
+Route::post('/expense_report/{expense_report}/sendEmail', 'ExpenseReportController@sendEmail');
 
-Route::get('/expense_report/{id}/confirmDelete', 'ExpenseReportController@confirmDelete');
-
+// Expense
 Route::resource('/expense_report/{expense_report}/expense', 'ExpenseController', [
     'except' => [
         'index',
         'show'
     ]
 ]);
-
 Route::get('/expense_report/{expense_report}/expense/{expense}/confirmDelete', 'ExpenseController@confirmDelete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

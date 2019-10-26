@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Edit Report</h1>
+            <h1>Send Report</h1>
         </div>
     </div>
     <div class="row">
@@ -24,15 +24,21 @@
                 </ul>
             </div>
             @endif
-            <form action="/expense_report/{{ $report->id }}" method="POST">
-                @csrf
-                @method('put')
-                <div class="form-group">
-                    <label for="title"><h5>Title:</h5></label>
-                    <input type="text" class="form-control" name="title" id="title" placeholder='Type any title' value="{{ old('title') }}">
+            @if ( $sent == true )
+            <div class="alert alert-success">
+                    <ul style="margin: 0;">
+                        Email sent successfully :)
+                    </ul>
                 </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
-                <a class='btn btn-secondary' href="/expense_report">Back</a>
+            @endif
+            <form action="/expense_report/{{ $report->id }}/sendEmail" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="email"><h5>Email:</h5></label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder='Type email' value="{{ old('email') }}">
+                </div>
+                <button class="btn btn-primary" type="submit">Send Email</button>
+                <a class='btn btn-secondary' href="/expense_report/">Back</a>
             </form>
         </div>
     </div>

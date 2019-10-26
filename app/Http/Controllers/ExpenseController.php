@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class ExpenseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -67,7 +72,8 @@ class ExpenseController extends Controller
     public function update(Request $request, ExpenseReport $expenseReport, Expense $expense)
     {
         $valData = $request->validate([
-            // The third validation of description means that must be unique in the respective expense report
+            // The third validation of description means that must be unique 
+            // in the respective expense report (excepting itself at the BD search)
             'description' => "required|min:3|unique:expenses,description,{$expense->id},id,expense_report_id,{$expenseReport->id}",
             'amount' => 'required|numeric|between:0,999999.99'
         ]);
