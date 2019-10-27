@@ -12,11 +12,11 @@ El objetivo es aprender a manejar Laravel, hecho cursando en Plazi.
 - Middlewares
 - Inyección de dependencias
 - Model Binding
-- Motor de plantillas Blade
-- Migraciones de Bases de Datos
-- Modelos y Relaciones Eloquent
-- Recursos CRUD de Laravel
-- Aplicar solución a los ataques CSRF con Laravel (Cross-Site Request Forgery)
-- Enviar peticiones HTTP con los métodos PUT, PATCH, DELETE
-- Realizar validaciones
-- Enviar Emails desde la aplicación
+- Motor de **plantillas** Blade
+- **Migraciones** de Bases de Datos
+- **Modelos** y **Relaciones** Eloquent
+- **Recursos CRUD** de Laravel
+- Aplicar solución a los ataques **CSRF** con Laravel (Cross-Site Request Forgery)
+- Enviar peticiones HTTP con los métodos **PUT, PATCH, DELETE**
+- Realizar **validaciones**
+- Enviar **Emails** desde la aplicación
