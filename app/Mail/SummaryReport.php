@@ -33,7 +33,7 @@ class SummaryReport extends Mailable
     {
         // "Any public property defined on your mailable class will automatically 
         //  be made available to the view." ($this->report as 'report')
-        return $this->from('expense-reports@myapp.com')
+        return $this->from( getenv('MAIL_FROM'), getenv('MAIL_FROM_NAME') )
                     ->subject('Summary Report | MyApp')
                     ->view('email.expenseReport');
     }
